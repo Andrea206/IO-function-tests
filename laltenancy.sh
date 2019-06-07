@@ -61,12 +61,18 @@ callservice() {
   fi
   for (( i=1 ; i <= $totalruns; i++ ))
   do
-    # JSON object to pass to Lambda Function
-    #json={"\"name\"":"\"Fred\u0020Smith\",\"param1\"":1,\"param2\"":2,\"param3\"":3}
-    #json={"\"name\"":"\"\",\"calcs\"":1000000,\"sleep\"":0,\"loops\"":25}
-    #json={"\"name\"":"\"\",\"calcs\"":1000000,\"sleep\"":0,\"loops\"":25}
-    json={"\"name\"":"\"\",\"numfiles\"":5,\"fileops\"":"\"W\",\"numfileops\"":4500,\"optype\"":"\"B\",\"nodelete\"":"false"}
+    # JSON object to pass to IO Lambda Function example
+    #json={"\"name\"":"\"\",\"numfiles\"":5,\"fileops\"":"\"W\",\"numfileops\"":4500,\"optype\"":"\"B\",\"nodelete\"":"false"}
+
+    # JSON object to pass to IO Lambda Function, using command line args
     #json={"\"name\"":"\"\",\"numfiles\"":$numfiles,\"fileops\"":"\"$fileops\",\"numfileops\"":$numfileops,\"optype\"":"\"$optype\",\"nodelete\"":"\"false\""}
+
+    #SR - L
+    #json={"\"name\"":"\"\",\"numfiles\"":10,\"fileops\"":"\"SR\",\"numfileops\"":10,\"optype\"":"\"L\",\"nodelete\"":"\"false\""}
+
+    #SR - B
+    #json={"\"name\"":"\"\",\"numfiles\"":10,\"fileops\"":"\"SR\",\"numfileops\"":10,\"optype\"":"\"B\",\"nodelete\"":"\"false\""}
+
 
     time1=( $(($(date +%s%N)/1000000)) )
 
@@ -425,7 +431,7 @@ stdevhost=`echo $total / ${#hosts[@]} | bc -l`
 stdevhost=`printf '%.*f\n' 3 $stdevhost`
 
 #########################################################################################################################################################
-# Generate CSV output - group by CPU Types
+# Generate printf output - group by CPU Types
 #########################################################################################################################################################
 
 # CPU Types info
