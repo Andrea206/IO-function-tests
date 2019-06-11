@@ -114,6 +114,7 @@ export -f callservice
 runsperthread=`echo $totalruns/$threads | bc -l`
 runsperthread=${runsperthread%.*}
 date
+aws lambda get-function-configuration --function-name IO
 echo "Setting up test: runsperthread=$runsperthread threads=$threads totalruns=$totalruns"
 for (( i=1 ; i <= $threads ; i ++))
 do
