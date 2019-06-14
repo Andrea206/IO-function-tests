@@ -1,5 +1,5 @@
 # IO-function-tests
-Testing scripts for I/O Lambda Function
+Testing scripts for [I/O Lambda Function](https://github.com/Andrea206/IO-function-project)
 ###### written by [Andrea Moncada](https://github.com/andrea206) 
 ###### based on code by [Dr. Wes Lloyd](https://github.com/wlloyduw)
 
