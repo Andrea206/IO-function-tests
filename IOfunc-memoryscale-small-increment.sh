@@ -1,14 +1,24 @@
 #!/bin/bash
-# IOfunc_memoryscale
+# IOfunc-memoryscale-small-increment
+# Test that increments memoroy setting for each IO lambda call by 2MB, from 128MB to 146MB
 
 # Original code by Dr. Wes Lloyd
 # Modified by Andrea Moncada
+
+# requires curl, the gnu parallel package, the bash calculator, jq for json processing, and the awscli
+#
+# script requires packages:
+# apt install parallel bc jq awscli curl
+#
+# To use this parallel test script, create files to provide your function name and AWS gateway URL
+# file: parurl        Provide URL from AWS-Gateway
+# file: parfunction   Provide AWS Lambda function name on a single line text file
+
 memscalecold() {
 totalruns=$2
 memory=$1
 for (( i=1 ; i <= $totalruns; i++ ))
 do
-timestamp=$(date +"-%m-%d-%Y-%H%M%S")
 aws lambda update-function-configuration --function-name IO --timeout 240 > /dev/null
 aws lambda update-function-configuration --function-name IO --timeout 300 > /dev/null
 aws lambda update-function-configuration --function-name IO --memory-size=$memory
