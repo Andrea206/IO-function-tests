@@ -23,7 +23,8 @@ aws lambda update-function-configuration --function-name IO --timeout 240 > /dev
 aws lambda update-function-configuration --function-name IO --timeout 300 > /dev/null
 aws lambda update-function-configuration --function-name IO --memory-size=$memory
 sleep 10
-./partestcputenancy.sh 100 100 >> IOfunc-memoryscale-medium-increment_SR_L
+#./partestcputenancy.sh 100 100
+./partestcputenancy.sh 100 100 >> ~/IOfunc-memoryscale-medium-increment_SR_B.csv
 aws lambda update-function-configuration --function-name IO --timeout 240 > /dev/null
 done
 }

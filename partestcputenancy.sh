@@ -58,7 +58,7 @@ callservice() {
   #json={"\"name\"":"\"\",\"numfiles\"":10,\"fileops\"":"\"SR\",\"numfileops\"":10,\"optype\"":"\"L\",\"nodelete\"":"\"false\""}
 
   #SR - B
-  json={"\"name\"":"\"\",\"numfiles\"":100,\"fileops\"":"\"SR\",\"numfileops\"":100,\"optype\"":"\"L\",\"nodelete\"":"\"false\""}
+  json={"\"name\"":"\"\",\"numfiles\"":100,\"fileops\"":"\"SR\",\"numfileops\"":100,\"optype\"":"\"B\",\"nodelete\"":"\"false\""}
 
 
     time1=( $(($(date +%s%N)/1000000)) )
