@@ -1,6 +1,7 @@
 # IO-function-tests
 Testing scripts for I/O Lambda Function
 ###### written by [Andrea Moncada](https://github.com/andrea206) 
+###### based on code by [Dr. Wes Lloyd](https://github.com/wlloyduw)
 
 #  File I/O Lambda Function:
 Creates, deletes, updates a large number of files.
